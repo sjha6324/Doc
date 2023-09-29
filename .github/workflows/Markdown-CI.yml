@@ -25,4 +25,4 @@ jobs:
         uses: ruzickap/action-my-markdown-linter@v1
 
       - name: Markdown Lint using pre-built container
-        uses: docker://peru/my-markdown-linter@v1
+        uses: avto-dev/markdown-lint@v1
