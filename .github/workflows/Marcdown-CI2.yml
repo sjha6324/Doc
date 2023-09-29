@@ -1,40 +1,22 @@
-name: markdown_lint
+name: Markdown Linting
 
 on:
   push:
     branches:
-      - main
+      - main # Change this to your main branch name, if different
+  pull_request:
+    branches:
+      - main # Change this to your main branch name, if different
 
 jobs:
-  markdown_lint:
-  name: Check Markdown files
+  markdown-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+    - name: Check out code
+      uses: actions/checkout@v2
 
-      - name: Markdown Lint
-        uses: ruzickap/action-my-markdown-linter@v1
-        with:
-          config_file: my_markdownlint.yml
-          debug: true
-          exclude: |
-            my_exclude_dir/md_files/
-            my_exclude_dir_2/markdown_files/
-            CHANGELOG.md
-          search_paths: |
-            check_dir_1/md_files/
-            check_dir_2/markdown_files/
+    - name: Install markdownlint-cli
+      run: npm install -g markdownlint-cli
 
-      - name: Markdown Lint - check only 'docs' directory and exclude CHANGELOG.md
-        uses: ruzickap/action-my-markdown-linter@v1
-        with:
-          search_paths: |
-            docs/
-          exclude: |
-            CHANGELOG.md
-
-      - name: Markdown Lint - simple example
-        uses: ruzickap/action-my-markdown-linter@v1
-
-      - name: Markdown Lint using pre-built container
-        uses: docker://peru/my-markdown-linter@v1
+    - name: Lint Markdown files
+      run: markdownlint '**/*.md'
