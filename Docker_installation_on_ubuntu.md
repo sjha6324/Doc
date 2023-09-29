@@ -1,16 +1,18 @@
-## Docker installation on ubuntu 
- ------------------------------
+# Docker installation on ubuntu
 
 - First, update existing packages:
 
 ```bash
 $ sudo apt update
 ```
+
 - install a few prerequisite packages which let apt use packages over HTTPS:
+
 
 ```bash 
 $ sudo apt install apt-transport-https ca-certificates curl software-properties-common
 bash 
+```
 
 - Then add the GPG key for the official Docker repository to your system:
 
