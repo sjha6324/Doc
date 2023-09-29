@@ -8,7 +8,7 @@ on:
 jobs:
   markdown_lint:
   name: Check Markdown files
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       
