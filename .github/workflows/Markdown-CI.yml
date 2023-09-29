@@ -7,11 +7,12 @@ on:
 
 jobs:
   markdown_lint:
-  name: Check Markdown files
-runs-on: ubuntu-latest
-steps:
-    - uses: actions/checkout@v2
-    
+    name: Check Markdown files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Markdown Lint - check only 'docs' directory and exclude CHANGELOG.md
         uses: ruzickap/action-my-markdown-linter@v1
         with:
