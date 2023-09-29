@@ -3,21 +3,20 @@
 - First, update existing packages:
 
 ```bash
-$ sudo apt update
+sudo apt update
 ```
 
 - install a few prerequisite packages which let apt use packages over HTTPS:
 
-
 ```bash 
-$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
-bash 
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+bash
 ```
 
 - Then add the GPG key for the official Docker repository to your system:
 
-```bash 
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 ```
 
 - **Add the Docker repository to APT sources:**
