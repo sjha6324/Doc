@@ -22,7 +22,7 @@ jobs:
             CHANGELOG.md
 
       - name: Markdown Lint - simple example
-        uses: ruzickap/action-my-markdown-linter@v1
+        uses: pipelinecomponents/markdownlint
 
       - name: Markdown Lint using pre-built container
         uses: avto-dev/markdown-lint@v1
