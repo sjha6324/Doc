@@ -11,7 +11,8 @@ jobs:
 runs-on: ubuntu-latest
 steps:
     - uses: actions/checkout@v2
-    - name: Markdown Lint - check only 'docs' directory and exclude CHANGELOG.md
+    
+      - name: Markdown Lint - check only 'docs' directory and exclude CHANGELOG.md
         uses: ruzickap/action-my-markdown-linter@v1
         with:
           search_paths: |
