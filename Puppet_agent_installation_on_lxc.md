@@ -22,19 +22,17 @@ Again update the apt packages lists :-
 ```bash
 apt-get update 
 ```
- 
+
 Now install the puppet agent on lxc container with command as below :
 
-```bash 
+```bash
 apt-get install puppet-agent 
 ```
 
 You can source a script that puppet-agent installs. Run the following command:
+
 ```bash
 source /etc/profile.d/puppet-agent.sh
 
 export PATH=/opt/puppetlabs/bin:$PATH
 ```
-
-
-
