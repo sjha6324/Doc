@@ -18,7 +18,7 @@ Before you start the installation process, update the list of available packages
 sudo apt-get update -y
 ```
 
-##### Step 2:-Hostname Resolution
+#### Step 2:-Hostname Resolution
 
 With Puppet, master and client nodes communicate using hostnames.
 Before installing Puppet, you need to set up a unique hostname on each node.
