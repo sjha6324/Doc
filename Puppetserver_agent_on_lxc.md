@@ -18,10 +18,10 @@ Before you start the installation process, update the list of available packages
 sudo apt-get update -y
 ```
 
-##### Step 2:-Hostname Resolution
+#### Step 2:-Hostname Resolution
 
- - With Puppet, master and client nodes communicate using hostnames.
- - Before installing Puppet, you need to set up a unique hostname on each node.
+With Puppet, master and client nodes communicate using hostnames.
+Before installing Puppet, you need to set up a unique hostname on each node.
 
 ## Use set-hostname to Change the Hostname on each node
 
@@ -52,6 +52,7 @@ where:
 1.2 Press **Esc**, and then **:wq!** to save and close the file.
 
 ## Step 3:-Install Puppet Server on Master Node
+
 1. Download the latest Puppet version on the master node:
 
 ```bash
@@ -62,7 +63,8 @@ wget https://apt.puppetlabs.com/puppet6-release-focal.deb
 
 ```bash
 sudo dpkg -i puppet6-release-focal.deb
-  ```
+```
+
 1.3 Update the package repository:
 
 ```bash
@@ -116,13 +118,13 @@ wget https://apt.puppetlabs.com/puppet6-release-focal.deb
 ```bash
 sudo dpkg -i puppet6-release-focal.deb
 ```
-   
+
 1.3 Update the package repository one more time:
 
 ```bash
 sudo apt-get update -y
 ```
-   
+
  1.4 Install the Puppet agent by using:
 
 ```bash
@@ -142,19 +144,20 @@ sudo vi /etc/puppetlabs/puppet/puppet.conf
 certname = puppetclient
 server = puppetmaster
 ```
-  
+
 1.7 Start the Puppet service and set it to launch on system boot by using:
 
 ```bash
 sudo systemctl start puppet
 sudo systemctl enable puppet
 ```
-  
+
 1.8 Check if the Puppet service is running with:
 
 ```bash
 sudo systemctl status puppet
 ```
+
 ## Step 5:-Sign Puppet Agent Certificate
 
 1. Using the Puppet master node, list all the available certificates:
@@ -162,13 +165,13 @@ sudo systemctl status puppet
 ```bash
 sudo /opt/puppetlabs/bin/puppetserver ca list --all
 ```
-  
+
 1.2 Sign the certificates with:
 
 ```bash
 sudo /opt/puppetlabs/bin/puppetserver ca sign --all
 ```
-  
+
 1.3 Use the following command to test the communication between the master and agent nodes from agent node:
 
 ```bash
