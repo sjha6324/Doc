@@ -1,6 +1,6 @@
 # Puppet-agent installation on lxc and agnet configuration
 
-Puppet-agent installed on lxc container 
+Puppet-agent installed on lxc container
 
 os release :-NAME="Ubuntu"
 VERSION="20.04.6 LTS (Focal Fossa)"
