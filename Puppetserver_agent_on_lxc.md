@@ -1,9 +1,9 @@
 # Introduction
 
-- Puppet is an open-source, automation admin engine used to perform administrative tasks,
+- Puppet is an open-source,automation admin engine used to perform admin tasks
 - Server management remotely. This tool is available on Linux, Unix, and Windows.
 
-**- we will cover the installation of Puppet on Ubuntu 20.04 on master and client nodes.**
+**- we will install the Puppet on Ubuntu 20.04 on master and client nodes.**
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ Before you start the installation process, update the list of available packages
 sudo apt-get update -y
 ```
 
-#### Step 2:-Hostname Resolution
+##### Step 2:-Hostname Resolution
 
 With Puppet, master and client nodes communicate using hostnames.
 Before installing Puppet, you need to set up a unique hostname on each node.
@@ -83,7 +83,7 @@ sudo apt-get install puppetserver -y
 sudo vi /etc/default/puppetserver
 ```
   
-1.6 In the puppetserver file, modify the following line to change the memory size to 1GB:
+1.6 In the server file, modify the below line to change the memory size to 1GB:
 
 ```bash
 # change this line no.9 as below:
@@ -137,7 +137,8 @@ sudo apt-get install puppet-agent -y
 sudo vi /etc/puppetlabs/puppet/puppet.conf
 ```
   
-1.6 Add the following lines to the end of the Puppet configuration file to define the Puppet master information:
+1.6 Add the following lines to the end of the Puppet configuration file
+    define the Puppet master information:
 
 ```bash
 [main]
@@ -172,7 +173,7 @@ sudo /opt/puppetlabs/bin/puppetserver ca list --all
 sudo /opt/puppetlabs/bin/puppetserver ca sign --all
 ```
 
-1.3 Use the following command to test the communication between the master and agent nodes from agent node:
+1.3 we will test the communication between the master and agent from agent node:
 
 ```bash
 puppet agent -t
