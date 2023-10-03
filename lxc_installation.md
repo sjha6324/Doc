@@ -90,8 +90,8 @@ lxc-start -n lxc-ubuntu
 ## Some usefull command for lxc
 
 ```bash
-lxc-info <container-name>	      # detail about container
-lxc-ls				                  # list container
-lxc attach <conatiner name>	    # get access of session inside container
-lxc-destroy <container name>	  # delete container
+lxc-info <container-name>
+lxc-ls
+lxc attach <conatiner name>
+lxc-destroy <container name>
 ```
