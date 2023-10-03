@@ -2,8 +2,10 @@
 
 ## Introduction of lxc
 
-LXC is a lightweight Virtualization technology that is used to run multiple isolated virtual units
-often referred to as containers in a chroot environment on a single host using a single Linux kernel.
+LXC is a lightweight Virtualization technology,
+that is used to run multiple isolated virtual units,
+often referred to as containers in a chroot environment,
+on a single host using a single Linux kernel.
 
 - we will do installation with help of upstreame repository using command:
 
@@ -41,7 +43,7 @@ lxc.cgroup.use
 lxc.cgroup.pattern
 ```
 
-# Create lxc container
+## Create lxc container
 
 ```bash
 lxc-create -t download \
@@ -72,11 +74,11 @@ lxc-create -t download \
 
 - As we have craeted our first lxc container we will list from below command :
 
-```
+```bash
 lxc-ls
 ```
 
-- To start the container 
+- To start the container
 
 ```bash
 lxc-start -n <container-name>
@@ -85,11 +87,11 @@ like:
 lxc-start -n lxc-ubuntu
 ```
 
-# Some usefull command for lxc:
+## Some usefull command for lxc
 
 ```bash
-lxc-info <container-name>	: detail about container 
-lxc-ls				: list container 
-lxc attach <conatiner name>	: get access of session inside container 
-lxc-destroy <container name>	: delete container 
+lxc-info <container-name>	      # detail about container
+lxc-ls				                  # list container
+lxc attach <conatiner name>	    # get access of session inside container
+lxc-destroy <container name>	  # delete container
 ```
