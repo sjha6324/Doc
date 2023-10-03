@@ -21,7 +21,7 @@ sudo apt-get update -y
 ##### Step 2:-Hostname Resolution
 
  - With Puppet, master and client nodes communicate using hostnames.
-   Before installing Puppet, you need to set up a unique hostname on each node.
+ - Before installing Puppet, you need to set up a unique hostname on each node.
 
 ## Use set-hostname to Change the Hostname on each node
 
@@ -36,8 +36,8 @@ sudo vi /etc/hosts
 ```
 
 **Note :-** you can use any editor.
-  
-2. Paste the following lines at the end of each **hosts** file:
+
+1.1 Paste the following lines at the end of each **hosts** file:
 
 ```bash
 [puppet master ip] puppetmaster puppet
@@ -49,7 +49,7 @@ where:
 - **[puppet master ip]** is the IP address of the master node,
 - **[puppet client ip]** is the IP address of the client node.
   
-3. Press **Esc**, and then **:wq!** to save and close the file.
+1.2 Press **Esc**, and then **:wq!** to save and close the file.
 
 ## Step 3:-Install Puppet Server on Master Node
 1. Download the latest Puppet version on the master node:
@@ -58,46 +58,46 @@ where:
 wget https://apt.puppetlabs.com/puppet6-release-focal.deb
 ```
   
-2. Once the download is complete, install the package by using:
+1.2 Once the download is complete, install the package by using:
 
 ```bash
 sudo dpkg -i puppet6-release-focal.deb
   ```
-3. Update the package repository:
+1.3 Update the package repository:
 
 ```bash
 sudo apt-get update -y
 ```
   
-4. Install the Puppet server with the following command:
+1.4 Install the Puppet server with the following command:
 
 ```bash
 sudo apt-get install puppetserver -y
 ```
   
-5. Open the **puppetserver** file by using :
+1.5 Open the **puppetserver** file by using :
 
 ```bash
 sudo vi /etc/default/puppetserver
 ```
   
-6. In the puppetserver file, modify the following line to change the memory size to 1GB:
+1.6 In the puppetserver file, modify the following line to change the memory size to 1GB:
 
 ```bash
 # change this line no.9 as below:
 JAVA_ARGS="-Xms1g -Xmx1g -Djruby.logger.class=com.puppetlabs.jruby_utils.jruby.Slf4jLogger"
 ```
   
-7. Press **Esc**, and then **:wq!** to save and close the file.
+1.7 Press **Esc**, and then **:wq!** to save and close the file.
   
-8. Start the Puppet service and set it to launch on system boot by using:
+1.8. Start the Puppet service and set it to launch on system boot by using:
 
 ```bash
 sudo systemctl start puppetserver
 sudo systemctl enable puppetserver
 ```
   
-9. Check if the Puppet service is running with:
+1.9 Check if the Puppet service is running with:
 
 ```bash
 sudo systemctl status puppetserver
@@ -111,31 +111,31 @@ sudo systemctl status puppetserver
 wget https://apt.puppetlabs.com/puppet6-release-focal.deb
 ```
   
-2. Once the download is complete, install the package by using:
+1.2 Once the download is complete, install the package by using:
 
 ```bash
 sudo dpkg -i puppet6-release-focal.deb
 ```
    
-3. Update the package repository one more time:
+1.3 Update the package repository one more time:
 
 ```bash
 sudo apt-get update -y
 ```
    
- 4. Install the Puppet agent by using:
+ 1.4 Install the Puppet agent by using:
 
 ```bash
 sudo apt-get install puppet-agent -y
 ```
   
-5. Open the Puppet configuration file:
+1.5 pen the Puppet configuration file:
 
 ```bash
 sudo vi /etc/puppetlabs/puppet/puppet.conf
 ```
   
-6. Add the following lines to the end of the Puppet configuration file to define the Puppet master information:
+1.6 Add the following lines to the end of the Puppet configuration file to define the Puppet master information:
 
 ```bash
 [main]
@@ -143,14 +143,14 @@ certname = puppetclient
 server = puppetmaster
 ```
   
-7. Start the Puppet service and set it to launch on system boot by using:
+1.7 Start the Puppet service and set it to launch on system boot by using:
 
 ```bash
 sudo systemctl start puppet
 sudo systemctl enable puppet
 ```
   
-8. Check if the Puppet service is running with:
+1.8 Check if the Puppet service is running with:
 
 ```bash
 sudo systemctl status puppet
@@ -163,13 +163,13 @@ sudo systemctl status puppet
 sudo /opt/puppetlabs/bin/puppetserver ca list --all
 ```
   
-2. Sign the certificates with:
+1.2 Sign the certificates with:
 
 ```bash
 sudo /opt/puppetlabs/bin/puppetserver ca sign --all
 ```
   
-3. Use the following command to test the communication between the master and agent nodes from agent node:
+1.3 Use the following command to test the communication between the master and agent nodes from agent node:
 
 ```bash
 puppet agent -t
